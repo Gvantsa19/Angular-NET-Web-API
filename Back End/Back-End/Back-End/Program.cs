@@ -1,4 +1,4 @@
-using Back_End.Data;
+using Infrastucture.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DbContextOfBackEnd>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("connectionString")));
+builder.Services.AddDbContext<DatabaseContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("connectionString")));
 
 var app = builder.Build();
 
